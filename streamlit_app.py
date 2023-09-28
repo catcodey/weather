@@ -1,2 +1,3 @@
 import streamlit as st
-st.write("hi")
+df=pd.read_csv("air-quality-india.csv")
+st.write(df
