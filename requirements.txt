@@ -2,3 +2,4 @@ seaborn
 pandas
 streamlit
 matplotlib
+streamlit_option_menu
