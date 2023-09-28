@@ -1,6 +1,13 @@
 import streamlit as st
 import subprocess
-required_libraries = ["numpy", "pandas", "matplotlib","streamlit","streamlit_option_menu"]
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+import datetime as dt
+import io
+
+required_libraries = ["streamlit_option_menu"]
 
 # Check if the required libraries are installed
 missing_libraries = [lib for lib in required_libraries if not st.subprocess.call(['pip', 'show', lib]) == 0]
@@ -11,16 +18,10 @@ if missing_libraries:
     for lib in missing_libraries:
         st.subprocess.call(['pip', 'install', lib])
     st.write("Libraries installed successfully!")
-import streamlit as st
+
 from streamlit_option_menu import option_menu
 st.title( " EDA ")
 
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-import numpy as np
-import datetime as dt
-import io
 
 
 # List of required libraries
