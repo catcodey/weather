@@ -2,7 +2,7 @@ import streamlit as st
 import subprocess
 
 # List of required libraries
-required_libraries = ["numpy", "pandas", "matplotlib", "streamlit_option_menu","seaborn"]
+required_libraries = ["numpy", "pandas", "matplotlib", "streamlit_option_menu==1.0.0","seaborn"]
 
 # Function to check and install missing libraries
 def install_missing_libraries():
