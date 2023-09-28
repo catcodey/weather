@@ -5,7 +5,7 @@ import subprocess
 required_libraries = ["numpy", "pandas", "matplotlib", "seaborn"]
 
 # Check if the required libraries are installed
-missing_libraries = [lib for lib in required_libraries if subprocess.call(['pip', 'show', lib]) != 0]
+missing_libraries = [lib for lib in required_libraries if subprocess.call(['pip', 'show', lib]) == 0]
 
 # Install missing libraries if any
 if missing_libraries:
