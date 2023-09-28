@@ -1,3 +1,4 @@
+import streamlit as st
 required_libraries = ["numpy", "pandas", "matplotlib","streamlit","streamlit_option_menu"]
 
 # Check if the required libraries are installed
