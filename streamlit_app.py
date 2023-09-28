@@ -7,7 +7,7 @@ import io
 import datetime as dt
 
 # List of required libraries
-required_libraries = ["numpy", "pandas", "matplotlib","seaborn"]
+required_libraries = ["matplotlib","seaborn"]
 
 # Check if the required libraries are installed
 missing_libraries = [lib for lib in required_libraries if subprocess.call(['pip', 'show', lib]) != 0]
