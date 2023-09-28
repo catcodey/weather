@@ -1,4 +1,5 @@
 import streamlit as st
+import subprocess
 required_libraries = ["numpy", "pandas", "matplotlib","streamlit","streamlit_option_menu"]
 
 # Check if the required libraries are installed
@@ -20,7 +21,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import datetime as dt
 import io
-import subprocess
+
 
 # List of required libraries
 
