@@ -24,7 +24,6 @@ st.title("My Streamlit App")
 
 
 
-import matplotlib.pyplot as plt 
 
 st.title( " EDA ")
 
