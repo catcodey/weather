@@ -1,13 +1,8 @@
 import streamlit as st
 import subprocess
 
-import numpy as np
-import pandas as pd
-import io
-import datetime as dt
-
 # List of required libraries
-required_libraries = ["matplotlib","seaborn"]
+required_libraries = ["numpy", "pandas", "matplotlib"]
 
 # Check if the required libraries are installed
 missing_libraries = [lib for lib in required_libraries if subprocess.call(['pip', 'show', lib]) != 0]
@@ -21,11 +16,11 @@ if missing_libraries:
 
 # Your Streamlit app code goes here
 st.title("My Streamlit App")
+import numpy as np
+import pandas as pd
+import seaborn as sns
 
 
-
-
-st.title( " EDA ")
 
 # List of required libraries
 
