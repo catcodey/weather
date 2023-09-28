@@ -1,4 +1,4 @@
-pip install streamlit_option_menu
+
 import streamlit as st
 from streamlit_option_menu import option_menu
 st.title( " EDA ")
@@ -12,7 +12,7 @@ import io
 import subprocess
 
 # List of required libraries
-required_libraries = ["numpy", "pandas", "matplotlib"]
+required_libraries = ["numpy", "pandas", "matplotlib","streamlit_option_menu"]
 
 # Check if the required libraries are installed
 missing_libraries = [lib for lib in required_libraries if not st.subprocess.call(['pip', 'show', lib]) == 0]
