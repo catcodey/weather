@@ -2,7 +2,7 @@ import streamlit as st
 import subprocess
 
 # List of required libraries
-required_libraries = ["numpy", "pandas", "matplotlib"]
+required_libraries = ["numpy", "pandas", "matplotlib","seaborn"]
 
 # Check if the required libraries are installed
 missing_libraries = [lib for lib in required_libraries if subprocess.call(['pip', 'show', lib]) == 0]
