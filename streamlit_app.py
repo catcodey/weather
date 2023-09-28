@@ -7,7 +7,7 @@ import numpy as np
 import datetime as dt
 import io
 
-required_libraries = ["streamlit_option_menu"]
+required_libraries = ["streamlit_option_menu","seaborn"]
 
 # Check if the required libraries are installed
 missing_libraries = [lib for lib in required_libraries if not st.subprocess.call(['pip', 'show', lib]) == 0]
