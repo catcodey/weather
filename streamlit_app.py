@@ -1,7 +1,7 @@
 import streamlit as st
 import subprocess
 import pandas as pd
-import seaborn as sns
+
 import matplotlib.pyplot as plt
 import numpy as np
 import datetime as dt
@@ -20,9 +20,9 @@ if missing_libraries:
     st.write("Libraries installed successfully!")
 
 from streamlit_option_menu import option_menu
+import seaborn as sns
+
 st.title( " EDA ")
-
-
 
 # List of required libraries
 
