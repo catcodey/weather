@@ -16,7 +16,7 @@ if missing_libraries:
 
 # Your Streamlit app code goes here
 st.title("My Streamlit App")
-from sklearn.model_selection import train_test_split
+import seaborn as sns
 
 
 
