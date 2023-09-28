@@ -1,4 +1,4 @@
-required_libraries = ["numpy", "pandas", "matplotlib","streamlit_option_menu"]
+required_libraries = ["numpy", "pandas", "matplotlib","streamlit","streamlit_option_menu"]
 
 # Check if the required libraries are installed
 missing_libraries = [lib for lib in required_libraries if not st.subprocess.call(['pip', 'show', lib]) == 0]
