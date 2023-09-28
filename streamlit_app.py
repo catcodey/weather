@@ -22,7 +22,8 @@ if missing_libraries:
 # Your Streamlit app code goes here
 st.title("My Streamlit App")
 
-import seaborn as sns
+
+
 import matplotlib.pyplot as plt 
 
 st.title( " EDA ")
