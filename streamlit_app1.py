@@ -264,49 +264,49 @@ if selected=="highest and lowest aqi analysis":
        st.markdown("Increasing the use of public transportation, promoting the use of electric vehicles, banning the burning of biomass, and implementing stricter emission standards for vehicles and industries are some of the measures to address air pollution.")
        st.markdown("The Indian government has taken a number of steps to address air pollution, including implementing stricter emission standards for vehicles and industries and banning the burning of biomass. However, more needs to be done to improve air quality in India. In January 2018, the Supreme Court of India banned the use of diesel vehicles older than 10 years in Delhi and the National Capital Region (NCR). The court also ordered the government to implement a number of other measures to reduce air pollution.")
   ############## seasonal and remark analysis tab ###############################
-  if selected=="seasonal and remark analysis of aqi":
-      tab1, tab2= st.tabs(["Seasonal Analysis", "Remark analysis"])
-      with tab1:
-        st.title("Seasonal Analysis")
-        st.divider()
-        st.write("")
-        summer = df[df["Month"].isin([3, 4, 5])]["aqi"].mean()
-        monsoon = df[df["Month"].isin([6, 7, 8, 9])]["aqi"].mean()
-        autumn = df[df["Month"].isin([10, 11])]["aqi"].mean()
-        winter = df[df["Month"].isin([12, 1])]["aqi"].mean()
+if selected=="seasonal and remark analysis of aqi":
+    tab1, tab2= st.tabs(["Seasonal Analysis", "Remark analysis"])
+    with tab1:
+      st.title("Seasonal Analysis")
+      st.divider()
+      st.write("")
+      summer = df[df["Month"].isin([3, 4, 5])]["aqi"].mean()
+      monsoon = df[df["Month"].isin([6, 7, 8, 9])]["aqi"].mean()
+      autumn = df[df["Month"].isin([10, 11])]["aqi"].mean()
+      winter = df[df["Month"].isin([12, 1])]["aqi"].mean()
+  
+      seasons = ['Summer', 'Monsoon', 'Autumn', 'Winter']
+      mean = [ summer,monsoon,autumn,winter]
+      fig,ax=plt.subplots(figsize=(1,1))
+      ax.patch.set_facecolor('black')
+      st.subheader("Air Quality Distribution by Seasons")
+      st.write("")
+      plt.pie(mean, labels=seasons, autopct="%1.1f%%", startangle=140,textprops={"fontsize":4})
+      #plt.title("Air Quality Distribution by Seasons")
+      plt.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
+      st.write(fig)
     
-        seasons = ['Summer', 'Monsoon', 'Autumn', 'Winter']
-        mean = [ summer,monsoon,autumn,winter]
-        fig,ax=plt.subplots(figsize=(1,1))
-        ax.patch.set_facecolor('black')
-        st.subheader("Air Quality Distribution by Seasons")
-        st.write("")
-        plt.pie(mean, labels=seasons, autopct="%1.1f%%", startangle=140,textprops={"fontsize":4})
-        #plt.title("Air Quality Distribution by Seasons")
-        plt.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
-        st.write(fig)
-      
-      with tab2:
-        st.title("Remark Analysis")
-        st.divider()
-        st.subheader("barplot of year vs aqi with remark analysis of each year")
-        st.write("")
-        fig,ax=plt.subplots(figsize=(10, 5))
-        sns.barplot(x='Year',y='aqi',data=df,estimator=np.std,hue='remark')
-        st.write(fig)
-        st.divider()
-        st.header("Air Distribution By Ratings")
-        poor_count=df[df['remark']=='poor']['Year'].count()
-        good_count=df[df['remark']=='good']['Year'].count()
-        moderate_count=df[df['remark']=='moderate']['Year'].count()
-        satisfactory_count=df[df['remark']=='satisfactory']['Year'].count()
-        poor_count,good_count,moderate_count,satisfactory_count
-        ratings = ['poor','good','satisfactory','moderate']
-        ratings_count= [ poor_count,good_count,moderate_count,satisfactory_count]
-    
-       
-        fig,ax=plt.subplots(figsize=(1,1))
-        plt.pie(ratings_count, labels=ratings, autopct="%1.2f%%", startangle=140,textprops={"fontsize":4})
-        plt.title("Air Quality Distribution by ratings",fontsize=6)
-        plt.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
-        st.write(fig)
+    with tab2:
+      st.title("Remark Analysis")
+      st.divider()
+      st.subheader("barplot of year vs aqi with remark analysis of each year")
+      st.write("")
+      fig,ax=plt.subplots(figsize=(10, 5))
+      sns.barplot(x='Year',y='aqi',data=df,estimator=np.std,hue='remark')
+      st.write(fig)
+      st.divider()
+      st.header("Air Distribution By Ratings")
+      poor_count=df[df['remark']=='poor']['Year'].count()
+      good_count=df[df['remark']=='good']['Year'].count()
+      moderate_count=df[df['remark']=='moderate']['Year'].count()
+      satisfactory_count=df[df['remark']=='satisfactory']['Year'].count()
+      poor_count,good_count,moderate_count,satisfactory_count
+      ratings = ['poor','good','satisfactory','moderate']
+      ratings_count= [ poor_count,good_count,moderate_count,satisfactory_count]
+  
+     
+      fig,ax=plt.subplots(figsize=(1,1))
+      plt.pie(ratings_count, labels=ratings, autopct="%1.2f%%", startangle=140,textprops={"fontsize":4})
+      plt.title("Air Quality Distribution by ratings",fontsize=6)
+      plt.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
+      st.write(fig)
