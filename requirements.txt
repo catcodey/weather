@@ -3,3 +3,4 @@ pandas
 streamlit
 matplotlib
 streamlit_option_menu
+matplotlib.ticker
